@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/star_gained.ogg-5effb9c9f298f83bb72d118053cf1b4c.oggstr"
+
+[deps]
+
+source_file="res://sfx/star_gained.ogg"
+dest_files=[ "res://.import/star_gained.ogg-5effb9c9f298f83bb72d118053cf1b4c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

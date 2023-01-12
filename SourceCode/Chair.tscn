@@ -1,0 +1,111 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://gfx/Pc/black_left.png" type="Texture" id=1]
+[ext_resource path="res://gfx/shine_tilesheet.png" type="Texture" id=2]
+[ext_resource path="res://gfx/shine.png" type="Texture" id=3]
+[ext_resource path="res://gfx/Pc/white_left.png" type="Texture" id=4]
+[ext_resource path="res://gfx/Chairs/chair_left.png" type="Texture" id=5]
+[ext_resource path="res://Chair.gd" type="Script" id=6]
+
+[sub_resource type="CanvasItemMaterial" id=2]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0.0181818 ), 0.0, 1.56041, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0, 0.437931, 0.555172, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "celebrate"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Chair:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -0.666666 ), Vector2( -2, -0.667 ), Vector2( 0, -0.666666 ), Vector2( 2, -0.667 ), Vector2( 0, -0.666666 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Chair:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ), Vector2( 2, 2 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Chair:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.501, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -5.0, 5.0, -5.0, 5.0, -5.0, -5.0, 5.0, -5.0, 5.0, -5.0, 0.0 ]
+}
+
+[node name="Chair" type="Node2D"]
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 6 )
+
+[node name="Shine" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 0.843137, 0, 0.682353 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+
+[node name="ParticleShine" type="CPUParticles2D" parent="."]
+material = SubResource( 2 )
+scale = Vector2( 0.2, 0.2 )
+emitting = false
+amount = 12
+texture = ExtResource( 2 )
+gravity = Vector2( 0, 0 )
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+angle = 300.0
+angle_random = 1.0
+scale_amount = 12.0
+scale_amount_random = 0.3
+scale_amount_curve = SubResource( 3 )
+color = Color( 1, 0.843137, 0, 1 )
+color_ramp = SubResource( 4 )
+hue_variation = 0.05
+hue_variation_random = 1.0
+anim_offset = 1.0
+anim_offset_random = 1.0
+
+[node name="Pc" type="TextureButton" parent="."]
+margin_left = 14.0
+margin_top = -16.0
+margin_right = 46.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 16, 16 )
+toggle_mode = true
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 4 )
+
+[node name="Chair" type="Sprite" parent="."]
+position = Vector2( 0, -0.666666 )
+texture = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/celebrate = SubResource( 1 )
+
+[connection signal="pressed" from="Pc" to="." method="_on_Pc_pressed"]

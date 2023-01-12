@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/jackpot_count9.ogg-51c9643a7d76d313d0f37a5d6d0240b1.oggstr"
+
+[deps]
+
+source_file="res://sfx/jackpot_count9.ogg"
+dest_files=[ "res://.import/jackpot_count9.ogg-51c9643a7d76d313d0f37a5d6d0240b1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
