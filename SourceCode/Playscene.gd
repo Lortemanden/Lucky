@@ -51,6 +51,12 @@ func spinForTime(time, winner:bool):
         chairs[now].setGolden()
         chairs[previous].setNormalChair()
         previous = now
+        if winner and i == time-1:
+            timer.wait_time = 0.5
+            timer.start()
+            yield(timer,"timeout")
+            emit_signal("spinFinished",chairs[now])
+            return
         timer.start()
         yield(timer,"timeout")
         if i == time-1 and not winner:
