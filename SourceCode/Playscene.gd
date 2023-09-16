@@ -42,9 +42,9 @@ func _on_Play_pressed():
     pass
 
 func spinForTime(time, winner:bool):
-    var previous = chairs.size()
     var keys = chairs.keys()
     var now = keys[randi()%keys.size()]
+    var previous = keys[randi()%keys.size()]
     for i in time:
         while now == previous:
             now = keys[randi()%keys.size()]
