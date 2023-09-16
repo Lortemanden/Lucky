@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Chair.tscn" type="PackedScene" id=1]
 [ext_resource path="res://gfx/tableSmall.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://gfx/playButton.png" type="Texture" id=6]
 [ext_resource path="res://gfx/fonts/JandaManateeSolid.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://gfx/playButtonHovered.png" type="Texture" id=8]
+[ext_resource path="res://Group.gd" type="Script" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 1, 1, 1 )
@@ -77,701 +78,1769 @@ hue_variation_random = 1.0
 anim_offset = 1.0
 anim_offset_random = 1.0
 
-[node name="Panel2" type="Panel" parent="."]
-margin_left = 1355.0
-margin_top = -10.0
-margin_right = 1385.0
-margin_bottom = 485.0
-
-[node name="Panel3" type="Panel" parent="."]
-margin_left = 1355.0
-margin_top = 905.0
-margin_right = 1385.0
-margin_bottom = 1080.0
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.01
+one_shot = true
 
 [node name="Tables" type="Node2D" parent="."]
-position = Vector2( 960, 540 )
+position = Vector2( 892, -126 )
 
 [node name="GroupA" type="Node2D" parent="Tables"]
-position = Vector2( -598, 305 )
+position = Vector2( -598, 284 )
 scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Table" type="Sprite" parent="Tables/GroupA"]
-position = Vector2( 1, 78 )
+position = Vector2( 101, -36.9999 )
+rotation = -3.14159
 scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="Chair" parent="Tables/GroupA/Table" instance=ExtResource( 1 )]
-position = Vector2( -13, 13.6667 )
+position = Vector2( -6.33331, 13.6667 )
+rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 12
-direction = "down"
+number = 1
+direction = "top"
 
 [node name="Chair2" parent="Tables/GroupA/Table" instance=ExtResource( 1 )]
-position = Vector2( -0.666626, 13.6667 )
+position = Vector2( 6.66672, 13.6667 )
+rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 11
-direction = "down"
-
-[node name="Chair3" parent="Tables/GroupA/Table" instance=ExtResource( 1 )]
-position = Vector2( 12.6667, 13.6667 )
-scale = Vector2( 0.5, 0.5 )
-number = 10
-direction = "down"
+number = 2
+direction = "top"
 
 [node name="Table2" type="Sprite" parent="Tables/GroupA"]
-position = Vector2( -79, -1 )
-rotation = 1.5708
+position = Vector2( 1.66676, -36.9999 )
+rotation = -3.14159
 scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
 
 [node name="Chair" parent="Tables/GroupA/Table2" instance=ExtResource( 1 )]
 position = Vector2( -13, 13.6667 )
-rotation = -1.5708
+rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
 number = 3
+direction = "top"
 
 [node name="Chair2" parent="Tables/GroupA/Table2" instance=ExtResource( 1 )]
-position = Vector2( -0.666718, 13.6667 )
-rotation = -1.5708
+position = Vector2( 3.05176e-05, 13.6667 )
+rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 2
+number = 4
+direction = "top"
 
 [node name="Chair3" parent="Tables/GroupA/Table2" instance=ExtResource( 1 )]
-position = Vector2( 11.6667, 13.6667 )
-rotation = -1.5708
+position = Vector2( 12.6667, 13.6667 )
+rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 1
+number = 5
+direction = "top"
 
 [node name="Table3" type="Sprite" parent="Tables/GroupA"]
-position = Vector2( 121.333, 79.3333 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Chair3" parent="Tables/GroupA/Table3" instance=ExtResource( 1 )]
-position = Vector2( 12.6667, 13.6667 )
-scale = Vector2( 0.5, 0.5 )
-number = 7
-direction = "down"
-
-[node name="Chair2" parent="Tables/GroupA/Table3" instance=ExtResource( 1 )]
-position = Vector2( -4.57764e-05, 13.6667 )
-scale = Vector2( 0.5, 0.5 )
-number = 8
-direction = "down"
-
-[node name="Chair" parent="Tables/GroupA/Table3" instance=ExtResource( 1 )]
-position = Vector2( -13, 13.6667 )
-scale = Vector2( 0.5, 0.5 )
-number = 9
-direction = "down"
-
-[node name="Table4" type="Sprite" parent="Tables/GroupA"]
-position = Vector2( -1, -83 )
+position = Vector2( -119, -36.9999 )
 rotation = -3.14159
 scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
 
-[node name="Chair" parent="Tables/GroupA/Table4" instance=ExtResource( 1 )]
+[node name="Chair" parent="Tables/GroupA/Table3" instance=ExtResource( 1 )]
 position = Vector2( -13, 13.6667 )
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
 number = 6
 direction = "top"
 
-[node name="Chair2" parent="Tables/GroupA/Table4" instance=ExtResource( 1 )]
+[node name="Chair2" parent="Tables/GroupA/Table3" instance=ExtResource( 1 )]
 position = Vector2( 3.05176e-05, 13.6667 )
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 5
+number = 7
 direction = "top"
 
-[node name="Chair3" parent="Tables/GroupA/Table4" instance=ExtResource( 1 )]
+[node name="Chair3" parent="Tables/GroupA/Table3" instance=ExtResource( 1 )]
 position = Vector2( 12.6667, 13.6667 )
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 4
+number = 8
 direction = "top"
 
-[node name="GroupB" type="Node2D" parent="Tables"]
-position = Vector2( -237, 305 )
-scale = Vector2( 1.5, 1.5 )
+[node name="Table4" type="Sprite" parent="Tables/GroupA"]
+position = Vector2( 98.3334, 12.6667 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
 
-[node name="Table" type="Sprite" parent="Tables/GroupB"]
-position = Vector2( 1, 78 )
+[node name="Chair" parent="Tables/GroupA/Table4" instance=ExtResource( 1 )]
+position = Vector2( 6.66673, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 9
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupA/Table4" instance=ExtResource( 1 )]
+position = Vector2( -6.33331, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 10
+direction = "down"
+
+[node name="Table5" type="Sprite" parent="Tables/GroupA"]
+position = Vector2( -0.666985, 11.9999 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
 
-[node name="Chair" parent="Tables/GroupB/Table" instance=ExtResource( 1 )]
+[node name="Chair" parent="Tables/GroupA/Table5" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 11
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupA/Table5" instance=ExtResource( 1 )]
+position = Vector2( -3.8147e-05, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 12
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupA/Table5" instance=ExtResource( 1 )]
 position = Vector2( -13, 13.6667 )
 scale = Vector2( 0.5, 0.5 )
-number = 24
+number = 13
 direction = "down"
 
-[node name="Chair2" parent="Tables/GroupB/Table" instance=ExtResource( 1 )]
-position = Vector2( -0.666626, 13.6667 )
-scale = Vector2( 0.5, 0.5 )
-number = 23
-direction = "down"
-
-[node name="Chair3" parent="Tables/GroupB/Table" instance=ExtResource( 1 )]
-position = Vector2( 12.6667, 13.6667 )
-scale = Vector2( 0.5, 0.5 )
-number = 22
-direction = "down"
-
-[node name="Table2" type="Sprite" parent="Tables/GroupB"]
-position = Vector2( -121.333, -83.3334 )
-rotation = 3.14159
+[node name="Table6" type="Sprite" parent="Tables/GroupA"]
+position = Vector2( -120.333, 10.6666 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupA/Table6" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 14
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupA/Table6" instance=ExtResource( 1 )]
+position = Vector2( -0.666626, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 15
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupA/Table6" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 16
+direction = "down"
+
+[node name="GroupB" type="Node2D" parent="Tables"]
+position = Vector2( -602, 554 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
+offset = 16
+
+[node name="Table" type="Sprite" parent="Tables/GroupB"]
+position = Vector2( 101, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="Chair" parent="Tables/GroupB/Table" instance=ExtResource( 1 )]
+position = Vector2( -6.33331, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 1
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupB/Table" instance=ExtResource( 1 )]
+position = Vector2( 6.66672, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 2
+direction = "top"
+
+[node name="Table2" type="Sprite" parent="Tables/GroupB"]
+position = Vector2( 1.66676, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
 
 [node name="Chair" parent="Tables/GroupB/Table2" instance=ExtResource( 1 )]
 position = Vector2( -13, 13.6667 )
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 15
+number = 3
 direction = "top"
 
 [node name="Chair2" parent="Tables/GroupB/Table2" instance=ExtResource( 1 )]
-position = Vector2( -0.666718, 13.6667 )
-rotation = 3.14159
-scale = Vector2( 0.5, 0.5 )
-number = 14
-direction = "top"
-
-[node name="Chair3" parent="Tables/GroupB/Table2" instance=ExtResource( 1 )]
-position = Vector2( 11.6667, 13.6667 )
-rotation = 3.14159
-scale = Vector2( 0.5, 0.5 )
-number = 13
-direction = "top"
-
-[node name="Table3" type="Sprite" parent="Tables/GroupB"]
-position = Vector2( 78, -3 )
-rotation = -1.5708
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-
-[node name="Chair3" parent="Tables/GroupB/Table3" instance=ExtResource( 1 )]
-position = Vector2( 12.6667, 13.6667 )
-rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 19
-direction = "right"
-
-[node name="Chair2" parent="Tables/GroupB/Table3" instance=ExtResource( 1 )]
-position = Vector2( -4.57764e-05, 13.6667 )
-rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 20
-direction = "right"
-
-[node name="Chair" parent="Tables/GroupB/Table3" instance=ExtResource( 1 )]
-position = Vector2( -13, 13.6667 )
-rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 21
-direction = "right"
-
-[node name="Table4" type="Sprite" parent="Tables/GroupB"]
-position = Vector2( -1, -83 )
-rotation = -3.14159
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-
-[node name="Chair" parent="Tables/GroupB/Table4" instance=ExtResource( 1 )]
-position = Vector2( -13, 13.6667 )
-rotation = 3.14159
-scale = Vector2( 0.5, 0.5 )
-number = 18
-direction = "top"
-
-[node name="Chair2" parent="Tables/GroupB/Table4" instance=ExtResource( 1 )]
 position = Vector2( 3.05176e-05, 13.6667 )
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 17
+number = 4
 direction = "top"
 
-[node name="Chair3" parent="Tables/GroupB/Table4" instance=ExtResource( 1 )]
+[node name="Chair3" parent="Tables/GroupB/Table2" instance=ExtResource( 1 )]
 position = Vector2( 12.6667, 13.6667 )
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 16
+number = 5
 direction = "top"
 
-[node name="GroupC" type="Node2D" parent="Tables"]
-position = Vector2( -612, -242 )
-scale = Vector2( 1.5, 1.5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Table2" type="Sprite" parent="Tables/GroupC"]
-position = Vector2( -59, -1 )
-rotation = 1.5708
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-
-[node name="Chair" parent="Tables/GroupC/Table2" instance=ExtResource( 1 )]
-position = Vector2( -13, 13.6667 )
-rotation = -1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 27
-
-[node name="Chair2" parent="Tables/GroupC/Table2" instance=ExtResource( 1 )]
-position = Vector2( -0.666718, 13.6667 )
-rotation = -1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 26
-
-[node name="Chair3" parent="Tables/GroupC/Table2" instance=ExtResource( 1 )]
-position = Vector2( 11.6667, 13.6667 )
-rotation = -1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 25
-
-[node name="Table3" type="Sprite" parent="Tables/GroupC"]
-position = Vector2( 60, -3 )
-rotation = -1.5708
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-
-[node name="Chair3" parent="Tables/GroupC/Table3" instance=ExtResource( 1 )]
-position = Vector2( 12.6667, 13.6667 )
-rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 30
-direction = "right"
-
-[node name="Chair2" parent="Tables/GroupC/Table3" instance=ExtResource( 1 )]
-position = Vector2( -2.67029e-05, 13.6667 )
-rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 31
-direction = "right"
-
-[node name="Chair" parent="Tables/GroupC/Table3" instance=ExtResource( 1 )]
-position = Vector2( -13, 13.6667 )
-rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 32
-direction = "right"
-
-[node name="Table4" type="Sprite" parent="Tables/GroupC"]
-position = Vector2( -1, -83 )
+[node name="Table3" type="Sprite" parent="Tables/GroupB"]
+position = Vector2( -119, -36.9999 )
 rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupB/Table3" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 6
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupB/Table3" instance=ExtResource( 1 )]
+position = Vector2( 3.05176e-05, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 7
+direction = "top"
+
+[node name="Chair3" parent="Tables/GroupB/Table3" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 8
+direction = "top"
+
+[node name="Table4" type="Sprite" parent="Tables/GroupB"]
+position = Vector2( 98.3334, 12.6667 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 
-[node name="Chair" parent="Tables/GroupC/Table4" instance=ExtResource( 1 )]
-position = Vector2( -6.33331, 13.6667 )
-rotation = 3.14159
+[node name="Chair" parent="Tables/GroupB/Table4" instance=ExtResource( 1 )]
+position = Vector2( 6.66673, 13.6667 )
 scale = Vector2( 0.5, 0.5 )
-number = 29
-direction = "top"
+number = 9
+direction = "down"
 
-[node name="Chair2" parent="Tables/GroupC/Table4" instance=ExtResource( 1 )]
-position = Vector2( 6.66672, 13.6667 )
-rotation = 3.14159
+[node name="Chair2" parent="Tables/GroupB/Table4" instance=ExtResource( 1 )]
+position = Vector2( -6.33331, 13.6667 )
 scale = Vector2( 0.5, 0.5 )
-number = 28
-direction = "top"
+number = 10
+direction = "down"
+
+[node name="Table5" type="Sprite" parent="Tables/GroupB"]
+position = Vector2( -0.666985, 11.9999 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupB/Table5" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 11
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupB/Table5" instance=ExtResource( 1 )]
+position = Vector2( -3.8147e-05, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 12
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupB/Table5" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 13
+direction = "down"
+
+[node name="Table6" type="Sprite" parent="Tables/GroupB"]
+position = Vector2( -120.333, 10.6666 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupB/Table6" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 14
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupB/Table6" instance=ExtResource( 1 )]
+position = Vector2( -0.666626, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 15
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupB/Table6" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 16
+direction = "down"
+
+[node name="GroupC" type="Node2D" parent="Tables"]
+position = Vector2( -606, 823 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+offset = 32
 
 [node name="Table" type="Sprite" parent="Tables/GroupC"]
-position = Vector2( -1, 80 )
+position = Vector2( 101, -36.9999 )
+rotation = -3.14159
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 
 [node name="Chair" parent="Tables/GroupC/Table" instance=ExtResource( 1 )]
 position = Vector2( -6.33331, 13.6667 )
+rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 34
-direction = "down"
+number = 1
+direction = "top"
 
 [node name="Chair2" parent="Tables/GroupC/Table" instance=ExtResource( 1 )]
 position = Vector2( 6.66672, 13.6667 )
+rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 33
-direction = "down"
+number = 2
+direction = "top"
 
-[node name="GroupD" type="Node2D" parent="Tables"]
-position = Vector2( -177, -242 )
-scale = Vector2( 1.5, 1.5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Table2" type="Sprite" parent="Tables/GroupD"]
-position = Vector2( -59, -1 )
-rotation = 1.5708
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-
-[node name="Chair" parent="Tables/GroupD/Table2" instance=ExtResource( 1 )]
-position = Vector2( -13, 13.6667 )
-rotation = -1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 37
-
-[node name="Chair2" parent="Tables/GroupD/Table2" instance=ExtResource( 1 )]
-position = Vector2( -0.666718, 13.6667 )
-rotation = -1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 36
-
-[node name="Chair3" parent="Tables/GroupD/Table2" instance=ExtResource( 1 )]
-position = Vector2( 11.6667, 13.6667 )
-rotation = -1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 35
-
-[node name="Table3" type="Sprite" parent="Tables/GroupD"]
-position = Vector2( 60, -3 )
-rotation = -1.5708
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-
-[node name="Chair3" parent="Tables/GroupD/Table3" instance=ExtResource( 1 )]
-position = Vector2( 12.6667, 13.6667 )
-rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 40
-direction = "right"
-
-[node name="Chair2" parent="Tables/GroupD/Table3" instance=ExtResource( 1 )]
-position = Vector2( -2.67029e-05, 13.6667 )
-rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 41
-direction = "right"
-
-[node name="Chair" parent="Tables/GroupD/Table3" instance=ExtResource( 1 )]
-position = Vector2( -13, 13.6667 )
-rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 42
-direction = "right"
-
-[node name="Table4" type="Sprite" parent="Tables/GroupD"]
-position = Vector2( -1, -83 )
+[node name="Table2" type="Sprite" parent="Tables/GroupC"]
+position = Vector2( 1.66676, -36.9999 )
 rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupC/Table2" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 3
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupC/Table2" instance=ExtResource( 1 )]
+position = Vector2( 3.05176e-05, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 4
+direction = "top"
+
+[node name="Chair3" parent="Tables/GroupC/Table2" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 5
+direction = "top"
+
+[node name="Table3" type="Sprite" parent="Tables/GroupC"]
+position = Vector2( -119, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupC/Table3" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 6
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupC/Table3" instance=ExtResource( 1 )]
+position = Vector2( 3.05176e-05, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 7
+direction = "top"
+
+[node name="Chair3" parent="Tables/GroupC/Table3" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 8
+direction = "top"
+
+[node name="Table4" type="Sprite" parent="Tables/GroupC"]
+position = Vector2( 98.3334, 12.6667 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 
-[node name="Chair" parent="Tables/GroupD/Table4" instance=ExtResource( 1 )]
-position = Vector2( -6.33331, 13.6667 )
-rotation = 3.14159
+[node name="Chair" parent="Tables/GroupC/Table4" instance=ExtResource( 1 )]
+position = Vector2( 6.66673, 13.6667 )
 scale = Vector2( 0.5, 0.5 )
-number = 39
-direction = "top"
+number = 9
+direction = "down"
 
-[node name="Chair2" parent="Tables/GroupD/Table4" instance=ExtResource( 1 )]
-position = Vector2( 6.66672, 13.6667 )
-rotation = 3.14159
+[node name="Chair2" parent="Tables/GroupC/Table4" instance=ExtResource( 1 )]
+position = Vector2( -6.33331, 13.6667 )
 scale = Vector2( 0.5, 0.5 )
-number = 38
-direction = "top"
+number = 10
+direction = "down"
+
+[node name="Table5" type="Sprite" parent="Tables/GroupC"]
+position = Vector2( -0.666985, 11.9999 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupC/Table5" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 11
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupC/Table5" instance=ExtResource( 1 )]
+position = Vector2( -3.8147e-05, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 12
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupC/Table5" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 13
+direction = "down"
+
+[node name="Table6" type="Sprite" parent="Tables/GroupC"]
+position = Vector2( -120.333, 10.6666 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupC/Table6" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 14
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupC/Table6" instance=ExtResource( 1 )]
+position = Vector2( -0.666626, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 15
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupC/Table6" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 16
+direction = "down"
+
+[node name="GroupD" type="Node2D" parent="Tables"]
+position = Vector2( -609, 1089 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+offset = 48
 
 [node name="Table" type="Sprite" parent="Tables/GroupD"]
-position = Vector2( -1, 80 )
+position = Vector2( 101, -36.9999 )
+rotation = -3.14159
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 
 [node name="Chair" parent="Tables/GroupD/Table" instance=ExtResource( 1 )]
 position = Vector2( -6.33331, 13.6667 )
+rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 44
-direction = "down"
+number = 1
+direction = "top"
 
 [node name="Chair2" parent="Tables/GroupD/Table" instance=ExtResource( 1 )]
 position = Vector2( 6.66672, 13.6667 )
+rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 43
-direction = "down"
+number = 2
+direction = "top"
 
-[node name="GroupE" type="Node2D" parent="Tables"]
-position = Vector2( 158, -341 )
-scale = Vector2( 1.5, 1.5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Table2" type="Sprite" parent="Tables/GroupE"]
-position = Vector2( 80, 140 )
+[node name="Table2" type="Sprite" parent="Tables/GroupD"]
+position = Vector2( 1.66676, -36.9999 )
+rotation = -3.14159
 scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
 
-[node name="Chair" parent="Tables/GroupE/Table2" instance=ExtResource( 1 )]
+[node name="Chair" parent="Tables/GroupD/Table2" instance=ExtResource( 1 )]
 position = Vector2( -13, 13.6667 )
+rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 49
-direction = "down"
+number = 3
+direction = "top"
 
-[node name="Chair2" parent="Tables/GroupE/Table2" instance=ExtResource( 1 )]
-position = Vector2( -0.666718, 13.6667 )
+[node name="Chair2" parent="Tables/GroupD/Table2" instance=ExtResource( 1 )]
+position = Vector2( 3.05176e-05, 13.6667 )
+rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 50
-direction = "down"
+number = 4
+direction = "top"
 
-[node name="Chair3" parent="Tables/GroupE/Table2" instance=ExtResource( 1 )]
-position = Vector2( 11.6667, 13.6667 )
+[node name="Chair3" parent="Tables/GroupD/Table2" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 51
-direction = "down"
+number = 5
+direction = "top"
 
-[node name="Table4" type="Sprite" parent="Tables/GroupE"]
-position = Vector2( -1, 2 )
-rotation = 1.5708
+[node name="Table3" type="Sprite" parent="Tables/GroupD"]
+position = Vector2( -119, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupD/Table3" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 6
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupD/Table3" instance=ExtResource( 1 )]
+position = Vector2( 3.05176e-05, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 7
+direction = "top"
+
+[node name="Chair3" parent="Tables/GroupD/Table3" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 8
+direction = "top"
+
+[node name="Table4" type="Sprite" parent="Tables/GroupD"]
+position = Vector2( 98.3334, 12.6667 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 
-[node name="Chair" parent="Tables/GroupE/Table4" instance=ExtResource( 1 )]
-position = Vector2( -6.33331, 13.6667 )
-rotation = -1.5708
+[node name="Chair" parent="Tables/GroupD/Table4" instance=ExtResource( 1 )]
+position = Vector2( 6.66673, 13.6667 )
 scale = Vector2( 0.5, 0.5 )
-number = 45
+number = 9
+direction = "down"
 
-[node name="Chair2" parent="Tables/GroupE/Table4" instance=ExtResource( 1 )]
-position = Vector2( 6.66672, 13.6667 )
-rotation = -1.5708
+[node name="Chair2" parent="Tables/GroupD/Table4" instance=ExtResource( 1 )]
+position = Vector2( -6.33331, 13.6667 )
 scale = Vector2( 0.5, 0.5 )
-number = 46
+number = 10
+direction = "down"
+
+[node name="Table5" type="Sprite" parent="Tables/GroupD"]
+position = Vector2( -0.666985, 11.9999 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupD/Table5" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 11
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupD/Table5" instance=ExtResource( 1 )]
+position = Vector2( -3.8147e-05, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 12
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupD/Table5" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 13
+direction = "down"
+
+[node name="Table6" type="Sprite" parent="Tables/GroupD"]
+position = Vector2( -120.333, 10.6666 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupD/Table6" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 14
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupD/Table6" instance=ExtResource( 1 )]
+position = Vector2( -0.666626, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 15
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupD/Table6" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 16
+direction = "down"
+
+[node name="GroupE" type="Node2D" parent="Tables"]
+position = Vector2( 123, 284 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+offset = 64
 
 [node name="Table" type="Sprite" parent="Tables/GroupE"]
-position = Vector2( -1, 81 )
-rotation = 1.5708
+position = Vector2( 101, -36.9999 )
+rotation = -3.14159
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 
 [node name="Chair" parent="Tables/GroupE/Table" instance=ExtResource( 1 )]
 position = Vector2( -6.33331, 13.6667 )
-rotation = -1.5708
+rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 47
+number = 1
+direction = "top"
 
 [node name="Chair2" parent="Tables/GroupE/Table" instance=ExtResource( 1 )]
 position = Vector2( 6.66672, 13.6667 )
-rotation = -1.5708
+rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 48
+number = 2
+direction = "top"
 
-[node name="GroupF" type="Node2D" parent="Tables"]
-position = Vector2( 676, 305 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Table" type="Sprite" parent="Tables/GroupF"]
-position = Vector2( 1, 78 )
+[node name="Table2" type="Sprite" parent="Tables/GroupE"]
+position = Vector2( 1.66676, -36.9999 )
+rotation = -3.14159
 scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
 
-[node name="Chair" parent="Tables/GroupF/Table" instance=ExtResource( 1 )]
+[node name="Chair" parent="Tables/GroupE/Table2" instance=ExtResource( 1 )]
 position = Vector2( -13, 13.6667 )
+rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 63
+number = 3
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupE/Table2" instance=ExtResource( 1 )]
+position = Vector2( 3.05176e-05, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 4
+direction = "top"
+
+[node name="Chair3" parent="Tables/GroupE/Table2" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 5
+direction = "top"
+
+[node name="Table3" type="Sprite" parent="Tables/GroupE"]
+position = Vector2( -119, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupE/Table3" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 6
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupE/Table3" instance=ExtResource( 1 )]
+position = Vector2( 3.05176e-05, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 7
+direction = "top"
+
+[node name="Chair3" parent="Tables/GroupE/Table3" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 8
+direction = "top"
+
+[node name="Table4" type="Sprite" parent="Tables/GroupE"]
+position = Vector2( 98.3334, 12.6667 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="Chair" parent="Tables/GroupE/Table4" instance=ExtResource( 1 )]
+position = Vector2( 6.66673, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 9
 direction = "down"
 
-[node name="Chair2" parent="Tables/GroupF/Table" instance=ExtResource( 1 )]
-position = Vector2( -0.666626, 13.6667 )
+[node name="Chair2" parent="Tables/GroupE/Table4" instance=ExtResource( 1 )]
+position = Vector2( -6.33331, 13.6667 )
 scale = Vector2( 0.5, 0.5 )
-number = 62
+number = 10
 direction = "down"
 
-[node name="Chair3" parent="Tables/GroupF/Table" instance=ExtResource( 1 )]
+[node name="Table5" type="Sprite" parent="Tables/GroupE"]
+position = Vector2( -0.666985, 11.9999 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupE/Table5" instance=ExtResource( 1 )]
 position = Vector2( 12.6667, 13.6667 )
 scale = Vector2( 0.5, 0.5 )
-number = 61
+number = 11
 direction = "down"
 
+[node name="Chair2" parent="Tables/GroupE/Table5" instance=ExtResource( 1 )]
+position = Vector2( -3.8147e-05, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 12
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupE/Table5" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 13
+direction = "down"
+
+[node name="Table6" type="Sprite" parent="Tables/GroupE"]
+position = Vector2( -120.333, 10.6666 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupE/Table6" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 14
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupE/Table6" instance=ExtResource( 1 )]
+position = Vector2( -0.666626, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 15
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupE/Table6" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 16
+direction = "down"
+
+[node name="GroupF" type="Node2D" parent="Tables"]
+position = Vector2( 119, 554 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+offset = 80
+
+[node name="Table" type="Sprite" parent="Tables/GroupF"]
+position = Vector2( 101, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="Chair" parent="Tables/GroupF/Table" instance=ExtResource( 1 )]
+position = Vector2( -6.33331, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 1
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupF/Table" instance=ExtResource( 1 )]
+position = Vector2( 6.66672, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 2
+direction = "top"
+
 [node name="Table2" type="Sprite" parent="Tables/GroupF"]
-position = Vector2( -79, -1 )
-rotation = 1.5708
+position = Vector2( 1.66676, -36.9999 )
+rotation = -3.14159
 scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
 
 [node name="Chair" parent="Tables/GroupF/Table2" instance=ExtResource( 1 )]
 position = Vector2( -13, 13.6667 )
-rotation = -1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 54
-
-[node name="Chair2" parent="Tables/GroupF/Table2" instance=ExtResource( 1 )]
-position = Vector2( -0.666718, 13.6667 )
-rotation = -1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 53
-
-[node name="Chair3" parent="Tables/GroupF/Table2" instance=ExtResource( 1 )]
-position = Vector2( 11.6667, 13.6667 )
-rotation = -1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 52
-
-[node name="Table3" type="Sprite" parent="Tables/GroupF"]
-position = Vector2( 78, -3 )
-rotation = -1.5708
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-
-[node name="Chair3" parent="Tables/GroupF/Table3" instance=ExtResource( 1 )]
-position = Vector2( 12.6667, 13.6667 )
-rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 58
-direction = "right"
-
-[node name="Chair2" parent="Tables/GroupF/Table3" instance=ExtResource( 1 )]
-position = Vector2( -4.57764e-05, 13.6667 )
-rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 59
-direction = "right"
-
-[node name="Chair" parent="Tables/GroupF/Table3" instance=ExtResource( 1 )]
-position = Vector2( -13, 13.6667 )
-rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 60
-direction = "right"
-
-[node name="Table4" type="Sprite" parent="Tables/GroupF"]
-position = Vector2( -1, -83 )
-rotation = -3.14159
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-
-[node name="Chair" parent="Tables/GroupF/Table4" instance=ExtResource( 1 )]
-position = Vector2( -13, 13.6667 )
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 57
+number = 3
 direction = "top"
 
-[node name="Chair2" parent="Tables/GroupF/Table4" instance=ExtResource( 1 )]
+[node name="Chair2" parent="Tables/GroupF/Table2" instance=ExtResource( 1 )]
 position = Vector2( 3.05176e-05, 13.6667 )
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 56
+number = 4
 direction = "top"
 
-[node name="Chair3" parent="Tables/GroupF/Table4" instance=ExtResource( 1 )]
+[node name="Chair3" parent="Tables/GroupF/Table2" instance=ExtResource( 1 )]
 position = Vector2( 12.6667, 13.6667 )
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 55
+number = 5
 direction = "top"
 
-[node name="GroupG" type="Node2D" parent="Tables"]
-position = Vector2( 658, -242 )
-scale = Vector2( 1.5, 1.5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Table2" type="Sprite" parent="Tables/GroupG"]
-position = Vector2( -59, -1 )
-rotation = 1.5708
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-
-[node name="Chair" parent="Tables/GroupG/Table2" instance=ExtResource( 1 )]
-position = Vector2( -13, 13.6667 )
-rotation = -1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 66
-
-[node name="Chair2" parent="Tables/GroupG/Table2" instance=ExtResource( 1 )]
-position = Vector2( -0.666718, 13.6667 )
-rotation = -1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 65
-
-[node name="Chair3" parent="Tables/GroupG/Table2" instance=ExtResource( 1 )]
-position = Vector2( 11.6667, 13.6667 )
-rotation = -1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 64
-
-[node name="Table3" type="Sprite" parent="Tables/GroupG"]
-position = Vector2( 60, -3 )
-rotation = -1.5708
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-
-[node name="Chair3" parent="Tables/GroupG/Table3" instance=ExtResource( 1 )]
-position = Vector2( 12.6667, 13.6667 )
-rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 69
-direction = "right"
-
-[node name="Chair2" parent="Tables/GroupG/Table3" instance=ExtResource( 1 )]
-position = Vector2( -2.67029e-05, 13.6667 )
-rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 70
-direction = "right"
-
-[node name="Chair" parent="Tables/GroupG/Table3" instance=ExtResource( 1 )]
-position = Vector2( -13, 13.6667 )
-rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
-number = 71
-direction = "right"
-
-[node name="Table4" type="Sprite" parent="Tables/GroupG"]
-position = Vector2( -1, -83 )
+[node name="Table3" type="Sprite" parent="Tables/GroupF"]
+position = Vector2( -119, -36.9999 )
 rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupF/Table3" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 6
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupF/Table3" instance=ExtResource( 1 )]
+position = Vector2( 3.05176e-05, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 7
+direction = "top"
+
+[node name="Chair3" parent="Tables/GroupF/Table3" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 8
+direction = "top"
+
+[node name="Table4" type="Sprite" parent="Tables/GroupF"]
+position = Vector2( 98.3334, 12.6667 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 
-[node name="Chair" parent="Tables/GroupG/Table4" instance=ExtResource( 1 )]
-position = Vector2( -6.33331, 13.6667 )
-rotation = 3.14159
+[node name="Chair" parent="Tables/GroupF/Table4" instance=ExtResource( 1 )]
+position = Vector2( 6.66673, 13.6667 )
 scale = Vector2( 0.5, 0.5 )
-number = 68
-direction = "top"
+number = 9
+direction = "down"
 
-[node name="Chair2" parent="Tables/GroupG/Table4" instance=ExtResource( 1 )]
-position = Vector2( 6.66672, 13.6667 )
-rotation = 3.14159
+[node name="Chair2" parent="Tables/GroupF/Table4" instance=ExtResource( 1 )]
+position = Vector2( -6.33331, 13.6667 )
 scale = Vector2( 0.5, 0.5 )
-number = 67
-direction = "top"
+number = 10
+direction = "down"
+
+[node name="Table5" type="Sprite" parent="Tables/GroupF"]
+position = Vector2( -0.666985, 11.9999 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupF/Table5" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 11
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupF/Table5" instance=ExtResource( 1 )]
+position = Vector2( -3.8147e-05, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 12
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupF/Table5" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 13
+direction = "down"
+
+[node name="Table6" type="Sprite" parent="Tables/GroupF"]
+position = Vector2( -120.333, 10.6666 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupF/Table6" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 14
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupF/Table6" instance=ExtResource( 1 )]
+position = Vector2( -0.666626, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 15
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupF/Table6" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 16
+direction = "down"
+
+[node name="GroupG" type="Node2D" parent="Tables"]
+position = Vector2( 115, 823 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+offset = 96
 
 [node name="Table" type="Sprite" parent="Tables/GroupG"]
-position = Vector2( -1, 80 )
+position = Vector2( 101, -36.9999 )
+rotation = -3.14159
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 
 [node name="Chair" parent="Tables/GroupG/Table" instance=ExtResource( 1 )]
 position = Vector2( -6.33331, 13.6667 )
+rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 73
-direction = "down"
+number = 1
+direction = "top"
 
 [node name="Chair2" parent="Tables/GroupG/Table" instance=ExtResource( 1 )]
 position = Vector2( 6.66672, 13.6667 )
+rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-number = 72
+number = 2
+direction = "top"
+
+[node name="Table2" type="Sprite" parent="Tables/GroupG"]
+position = Vector2( 1.66676, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupG/Table2" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 3
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupG/Table2" instance=ExtResource( 1 )]
+position = Vector2( 3.05176e-05, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 4
+direction = "top"
+
+[node name="Chair3" parent="Tables/GroupG/Table2" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 5
+direction = "top"
+
+[node name="Table3" type="Sprite" parent="Tables/GroupG"]
+position = Vector2( -119, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupG/Table3" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 6
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupG/Table3" instance=ExtResource( 1 )]
+position = Vector2( 3.05176e-05, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 7
+direction = "top"
+
+[node name="Chair3" parent="Tables/GroupG/Table3" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 8
+direction = "top"
+
+[node name="Table4" type="Sprite" parent="Tables/GroupG"]
+position = Vector2( 98.3334, 12.6667 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="Chair" parent="Tables/GroupG/Table4" instance=ExtResource( 1 )]
+position = Vector2( 6.66673, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 9
 direction = "down"
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.01
-one_shot = true
+[node name="Chair2" parent="Tables/GroupG/Table4" instance=ExtResource( 1 )]
+position = Vector2( -6.33331, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 10
+direction = "down"
+
+[node name="Table5" type="Sprite" parent="Tables/GroupG"]
+position = Vector2( -0.666985, 11.9999 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupG/Table5" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 11
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupG/Table5" instance=ExtResource( 1 )]
+position = Vector2( -3.8147e-05, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 12
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupG/Table5" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 13
+direction = "down"
+
+[node name="Table6" type="Sprite" parent="Tables/GroupG"]
+position = Vector2( -120.333, 10.6666 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupG/Table6" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 14
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupG/Table6" instance=ExtResource( 1 )]
+position = Vector2( -0.666626, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 15
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupG/Table6" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 16
+direction = "down"
+
+[node name="GroupH" type="Node2D" parent="Tables"]
+position = Vector2( 112, 1089 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+offset = 112
+
+[node name="Table" type="Sprite" parent="Tables/GroupH"]
+position = Vector2( 101, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="Chair" parent="Tables/GroupH/Table" instance=ExtResource( 1 )]
+position = Vector2( -6.33331, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 1
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupH/Table" instance=ExtResource( 1 )]
+position = Vector2( 6.66672, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 2
+direction = "top"
+
+[node name="Table2" type="Sprite" parent="Tables/GroupH"]
+position = Vector2( 1.66676, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupH/Table2" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 3
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupH/Table2" instance=ExtResource( 1 )]
+position = Vector2( 3.05176e-05, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 4
+direction = "top"
+
+[node name="Chair3" parent="Tables/GroupH/Table2" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 5
+direction = "top"
+
+[node name="Table3" type="Sprite" parent="Tables/GroupH"]
+position = Vector2( -119, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupH/Table3" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 6
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupH/Table3" instance=ExtResource( 1 )]
+position = Vector2( 3.05176e-05, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 7
+direction = "top"
+
+[node name="Chair3" parent="Tables/GroupH/Table3" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 8
+direction = "top"
+
+[node name="Table4" type="Sprite" parent="Tables/GroupH"]
+position = Vector2( 98.3334, 12.6667 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="Chair" parent="Tables/GroupH/Table4" instance=ExtResource( 1 )]
+position = Vector2( 6.66673, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 9
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupH/Table4" instance=ExtResource( 1 )]
+position = Vector2( -6.33331, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 10
+direction = "down"
+
+[node name="Table5" type="Sprite" parent="Tables/GroupH"]
+position = Vector2( -0.666985, 11.9999 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupH/Table5" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 11
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupH/Table5" instance=ExtResource( 1 )]
+position = Vector2( -3.8147e-05, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 12
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupH/Table5" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 13
+direction = "down"
+
+[node name="Table6" type="Sprite" parent="Tables/GroupH"]
+position = Vector2( -120.333, 10.6666 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupH/Table6" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 14
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupH/Table6" instance=ExtResource( 1 )]
+position = Vector2( -0.666626, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 15
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupH/Table6" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 16
+direction = "down"
+
+[node name="GroupI" type="Node2D" parent="Tables"]
+position = Vector2( 814, 284 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+offset = 128
+
+[node name="Table" type="Sprite" parent="Tables/GroupI"]
+position = Vector2( 101, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="Chair" parent="Tables/GroupI/Table" instance=ExtResource( 1 )]
+position = Vector2( -6.33331, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 1
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupI/Table" instance=ExtResource( 1 )]
+position = Vector2( 6.66672, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 2
+direction = "top"
+
+[node name="Table2" type="Sprite" parent="Tables/GroupI"]
+position = Vector2( 1.66676, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupI/Table2" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 3
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupI/Table2" instance=ExtResource( 1 )]
+position = Vector2( 3.05176e-05, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 4
+direction = "top"
+
+[node name="Chair3" parent="Tables/GroupI/Table2" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 5
+direction = "top"
+
+[node name="Table3" type="Sprite" parent="Tables/GroupI"]
+position = Vector2( -119, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupI/Table3" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 6
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupI/Table3" instance=ExtResource( 1 )]
+position = Vector2( 3.05176e-05, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 7
+direction = "top"
+
+[node name="Chair3" parent="Tables/GroupI/Table3" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 8
+direction = "top"
+
+[node name="Table4" type="Sprite" parent="Tables/GroupI"]
+position = Vector2( 98.3334, 12.6667 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="Chair" parent="Tables/GroupI/Table4" instance=ExtResource( 1 )]
+position = Vector2( 6.66673, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 9
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupI/Table4" instance=ExtResource( 1 )]
+position = Vector2( -6.33331, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 10
+direction = "down"
+
+[node name="Table5" type="Sprite" parent="Tables/GroupI"]
+position = Vector2( -0.666985, 11.9999 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupI/Table5" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 11
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupI/Table5" instance=ExtResource( 1 )]
+position = Vector2( -3.8147e-05, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 12
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupI/Table5" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 13
+direction = "down"
+
+[node name="Table6" type="Sprite" parent="Tables/GroupI"]
+position = Vector2( -120.333, 10.6666 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupI/Table6" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 14
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupI/Table6" instance=ExtResource( 1 )]
+position = Vector2( -0.666626, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 15
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupI/Table6" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 16
+direction = "down"
+
+[node name="GroupJ" type="Node2D" parent="Tables"]
+position = Vector2( 810, 554 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+offset = 144
+
+[node name="Table" type="Sprite" parent="Tables/GroupJ"]
+position = Vector2( 101, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="Chair" parent="Tables/GroupJ/Table" instance=ExtResource( 1 )]
+position = Vector2( -6.33331, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 1
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupJ/Table" instance=ExtResource( 1 )]
+position = Vector2( 6.66672, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 2
+direction = "top"
+
+[node name="Table2" type="Sprite" parent="Tables/GroupJ"]
+position = Vector2( 1.66676, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupJ/Table2" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 3
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupJ/Table2" instance=ExtResource( 1 )]
+position = Vector2( 3.05176e-05, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 4
+direction = "top"
+
+[node name="Chair3" parent="Tables/GroupJ/Table2" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 5
+direction = "top"
+
+[node name="Table3" type="Sprite" parent="Tables/GroupJ"]
+position = Vector2( -119, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupJ/Table3" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 6
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupJ/Table3" instance=ExtResource( 1 )]
+position = Vector2( 3.05176e-05, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 7
+direction = "top"
+
+[node name="Chair3" parent="Tables/GroupJ/Table3" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 8
+direction = "top"
+
+[node name="Table4" type="Sprite" parent="Tables/GroupJ"]
+position = Vector2( 98.3334, 12.6667 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="Chair" parent="Tables/GroupJ/Table4" instance=ExtResource( 1 )]
+position = Vector2( 6.66673, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 9
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupJ/Table4" instance=ExtResource( 1 )]
+position = Vector2( -6.33331, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 10
+direction = "down"
+
+[node name="Table5" type="Sprite" parent="Tables/GroupJ"]
+position = Vector2( -0.666985, 11.9999 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupJ/Table5" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 11
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupJ/Table5" instance=ExtResource( 1 )]
+position = Vector2( -3.8147e-05, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 12
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupJ/Table5" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 13
+direction = "down"
+
+[node name="Table6" type="Sprite" parent="Tables/GroupJ"]
+position = Vector2( -120.333, 10.6666 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupJ/Table6" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 14
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupJ/Table6" instance=ExtResource( 1 )]
+position = Vector2( -0.666626, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 15
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupJ/Table6" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 16
+direction = "down"
+
+[node name="GroupK" type="Node2D" parent="Tables"]
+position = Vector2( 806, 823 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+offset = 160
+
+[node name="Table" type="Sprite" parent="Tables/GroupK"]
+position = Vector2( 101, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="Chair" parent="Tables/GroupK/Table" instance=ExtResource( 1 )]
+position = Vector2( -6.33331, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 1
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupK/Table" instance=ExtResource( 1 )]
+position = Vector2( 6.66672, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 2
+direction = "top"
+
+[node name="Table2" type="Sprite" parent="Tables/GroupK"]
+position = Vector2( 1.66676, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupK/Table2" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 3
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupK/Table2" instance=ExtResource( 1 )]
+position = Vector2( 3.05176e-05, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 4
+direction = "top"
+
+[node name="Chair3" parent="Tables/GroupK/Table2" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 5
+direction = "top"
+
+[node name="Table3" type="Sprite" parent="Tables/GroupK"]
+position = Vector2( -119, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupK/Table3" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 6
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupK/Table3" instance=ExtResource( 1 )]
+position = Vector2( 3.05176e-05, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 7
+direction = "top"
+
+[node name="Chair3" parent="Tables/GroupK/Table3" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 8
+direction = "top"
+
+[node name="Table4" type="Sprite" parent="Tables/GroupK"]
+position = Vector2( 98.3334, 12.6667 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="Chair" parent="Tables/GroupK/Table4" instance=ExtResource( 1 )]
+position = Vector2( 6.66673, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 9
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupK/Table4" instance=ExtResource( 1 )]
+position = Vector2( -6.33331, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 10
+direction = "down"
+
+[node name="Table5" type="Sprite" parent="Tables/GroupK"]
+position = Vector2( -0.666985, 11.9999 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupK/Table5" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 11
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupK/Table5" instance=ExtResource( 1 )]
+position = Vector2( -3.8147e-05, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 12
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupK/Table5" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 13
+direction = "down"
+
+[node name="Table6" type="Sprite" parent="Tables/GroupK"]
+position = Vector2( -120.333, 10.6666 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupK/Table6" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 14
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupK/Table6" instance=ExtResource( 1 )]
+position = Vector2( -0.666626, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 15
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupK/Table6" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 16
+direction = "down"
+
+[node name="GroupL" type="Node2D" parent="Tables"]
+position = Vector2( 803, 1089 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+offset = 176
+
+[node name="Table" type="Sprite" parent="Tables/GroupL"]
+position = Vector2( 101, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="Chair" parent="Tables/GroupL/Table" instance=ExtResource( 1 )]
+position = Vector2( -6.33331, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 1
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupL/Table" instance=ExtResource( 1 )]
+position = Vector2( 6.66672, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 2
+direction = "top"
+
+[node name="Table2" type="Sprite" parent="Tables/GroupL"]
+position = Vector2( 1.66676, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupL/Table2" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 3
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupL/Table2" instance=ExtResource( 1 )]
+position = Vector2( 3.05176e-05, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 4
+direction = "top"
+
+[node name="Chair3" parent="Tables/GroupL/Table2" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 5
+direction = "top"
+
+[node name="Table3" type="Sprite" parent="Tables/GroupL"]
+position = Vector2( -119, -36.9999 )
+rotation = -3.14159
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupL/Table3" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 6
+direction = "top"
+
+[node name="Chair2" parent="Tables/GroupL/Table3" instance=ExtResource( 1 )]
+position = Vector2( 3.05176e-05, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 7
+direction = "top"
+
+[node name="Chair3" parent="Tables/GroupL/Table3" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+number = 8
+direction = "top"
+
+[node name="Table4" type="Sprite" parent="Tables/GroupL"]
+position = Vector2( 98.3334, 12.6667 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="Chair" parent="Tables/GroupL/Table4" instance=ExtResource( 1 )]
+position = Vector2( 6.66673, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 9
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupL/Table4" instance=ExtResource( 1 )]
+position = Vector2( -6.33331, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 10
+direction = "down"
+
+[node name="Table5" type="Sprite" parent="Tables/GroupL"]
+position = Vector2( -0.666985, 11.9999 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupL/Table5" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 11
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupL/Table5" instance=ExtResource( 1 )]
+position = Vector2( -3.8147e-05, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 12
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupL/Table5" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 13
+direction = "down"
+
+[node name="Table6" type="Sprite" parent="Tables/GroupL"]
+position = Vector2( -120.333, 10.6666 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Chair" parent="Tables/GroupL/Table6" instance=ExtResource( 1 )]
+position = Vector2( 12.6667, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 14
+direction = "down"
+
+[node name="Chair2" parent="Tables/GroupL/Table6" instance=ExtResource( 1 )]
+position = Vector2( -0.666626, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 15
+direction = "down"
+
+[node name="Chair3" parent="Tables/GroupL/Table6" instance=ExtResource( 1 )]
+position = Vector2( -13, 13.6667 )
+scale = Vector2( 0.5, 0.5 )
+number = 16
+direction = "down"
 
 [node name="Play" type="TextureButton" parent="."]
-margin_left = 812.0
-margin_top = 470.0
-margin_right = 1174.0
-margin_bottom = 609.0
+margin_left = 800.4
+margin_top = 475.6
+margin_right = 1162.4
+margin_bottom = 614.6
 rect_scale = Vector2( 0.8, 0.8 )
 rect_pivot_offset = Vector2( 181, 69 )
 texture_normal = ExtResource( 6 )

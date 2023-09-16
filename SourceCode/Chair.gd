@@ -15,7 +15,6 @@ export(String) var direction = "left" setget setDirection
 
 func _ready():
     setDirection(direction)
-    playScene.chairReady(self)
     rich_text_label.bbcode_text = "[wave amp=50 freq=2][center]"+str(number)
     pass
 
