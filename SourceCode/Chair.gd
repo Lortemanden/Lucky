@@ -34,14 +34,22 @@ func setDirection(value):
     $Pc.rect_position = pcPosition[direction]
     pass
 
-func _on_Pc_pressed():
-    if pc.pressed:
-        playScene.chairNotReady(self)
+func _on_Pc_pressed(save := true):
+    if save and Input.is_action_pressed("shift"):
+        $"../..".readyChairs(pc.pressed)
     else:
-        playScene.chairReady(self)
+        if pc.pressed:
+            playScene.chairNotReady(self)
+        else:
+            playScene.chairReady(self)
+        Game.chairs[str(number)] = pc.pressed
+        if save:
+            Game.saveSettingsData()
+            Game.postUserData()
     pass
 
 func celebrate():
+    rich_text_label.bbcode_text = "[wave amp=50 freq=2][center]"+str(number)
     particle_shine.emitting = true
     animation_player.get_animation("celebrate").loop = true
     animation_player.play("celebrate")

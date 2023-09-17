@@ -11,3 +11,11 @@ func _ready():
             count += 1
     pass
 
+func readyChairs(ready:bool):
+    for table in get_children():
+        for chair in table.get_children():
+            chair.pc.pressed = ready
+            chair._on_Pc_pressed(false)
+    Game.saveSettingsData()
+    Game.postUserData()
+    pass
